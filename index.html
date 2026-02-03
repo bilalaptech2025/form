@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Portal | Premium Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container animate__animated animate__fadeIn">
+        <!-- Header with Logo -->
+        <header class="form-header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Edu<span class="highlight">Register</span> Pro</span>
+            </div>
+            <h1 class="title">Student Registration Portal</h1>
+            <p class="subtitle">Join our academic community with just a few simple steps</p>
+        </header>
+        
+        <div class="main-content">
+            <!-- Form Section -->
+            <div class="form-section">
+                <div class="form-card">
+                    <div class="form-header-card">
+                        <h2><i class="fas fa-user-edit"></i> Registration Details</h2>
+                        <p>Please fill in all required fields marked with <span class="required">*</span></p>
+                    </div>
+                    
+                    <form id="registrationForm" class="form-animate">
+                        <!-- Personal Information Section -->
+                        <div class="form-section-title">
+                            <i class="fas fa-user-circle"></i> Personal Information
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">
+                                    <i class="fas fa-user"></i> Full Name <span class="required">*</span>
+                                </label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                                <div class="error-message" id="nameError"></div>
+                                <div class="hint">Must be at least 2 characters long</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i> Email Address <span class="required">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" placeholder="student@example.com">
+                                <div class="error-message" id="emailError"></div>
+                                <div class="hint">We'll send confirmation to this email</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">
+                                    <i class="fas fa-phone-alt"></i> Phone Number <span class="required">*</span>
+                                </label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 9876543210">
+                                <div class="error-message" id="phoneError"></div>
+                                <div class="hint">Include country code if applicable</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="dob">
+                                    <i class="fas fa-birthday-cake"></i> Date of Birth <span class="required">*</span>
+                                </label>
+                                <input type="date" id="dob" name="dob">
+                                <div class="error-message" id="dobError"></div>
+                                <div class="hint">You must be at least 13 years old</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Academic Information Section -->
+                        <div class="form-section-title">
+                            <i class="fas fa-graduation-cap"></i> Academic Information
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="course">
+                                    <i class="fas fa-book"></i> Course <span class="required">*</span>
+                                </label>
+                                <select id="course" name="course">
+                                    <option value="">Select your course</option>
+                                    <option value="cs">Computer Science</option>
+                                    <option value="eng">Engineering</option>
+                                    <option value="med">Medical Sciences</option>
+                                    <option value="mba">Business Administration</option>
+                                    <option value="arts">Arts & Humanities</option>
+                                    <option value="law">Law</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="error-message" id="courseError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="year">
+                                    <i class="fas fa-calendar-alt"></i> Year of Study <span class="required">*</span>
+                                </label>
+                                <select id="year" name="year">
+                                    <option value="">Select year</option>
+                                    <option value="1">First Year</option>
+                                    <option value="2">Second Year</option>
+                                    <option value="3">Third Year</option>
+                                    <option value="4">Fourth Year</option>
+                                    <option value="5">Fifth Year</option>
+                                </select>
+                                <div class="error-message" id="yearError"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Account Security Section -->
+                        <div class="form-section-title">
+                            <i class="fas fa-shield-alt"></i> Account Security
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">
+                                    <i class="fas fa-lock"></i> Password <span class="required">*</span>
+                                </label>
+                                <div class="password-container">
+                                    <input type="password" id="password" name="password" placeholder="Create a strong password">
+                                    <button type="button" class="toggle-password" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="error-message" id="passwordError"></div>
+                                <div class="password-strength">
+                                    <div class="strength-bar"></div>
+                                    <div class="strength-text">Password Strength: <span id="strengthText">Weak</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmPassword">
+                                    <i class="fas fa-lock"></i> Confirm Password <span class="required">*</span>
+                                </label>
+                                <div class="password-container">
+                                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password">
+                                    <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="error-message" id="confirmPasswordError"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Information -->
+                        <div class="form-section-title">
+                            <i class="fas fa-info-circle"></i> Additional Information
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gender">
+                                <i class="fas fa-venus-mars"></i> Gender <span class="required">*</span>
+                            </label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">Male</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">Female</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="other">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">Other</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="prefer-not-to-say">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">Prefer not to say</span>
+                                </label>
+                            </div>
+                            <div class="error-message" id="genderError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">
+                                <i class="fas fa-home"></i> Address
+                            </label>
+                            <textarea id="address" name="address" rows="3" placeholder="Enter your current address"></textarea>
+                        </div>
+                        
+                        <!-- Terms and Submit -->
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms">
+                            <label for="terms">
+                                I agree to the <a href="#" class="link">Terms and Conditions</a> and <a href="#" class="link">Privacy Policy</a> <span class="required">*</span>
+                            </label>
+                            <div class="error-message" id="termsError"></div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter" checked>
+                            <label for="newsletter">
+                                I would like to receive updates, newsletters, and promotional materials
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="previewBtn">
+                                <i class="fas fa-eye"></i> Preview Application
+                            </button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i> Submit Registration
+                                <span class="btn-loading" id="btnLoading">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="#" class="link">Sign In Here</a></p>
+                            <p class="note"><i class="fas fa-info-circle"></i> All fields marked with <span class="required">*</span> are mandatory</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Info Panel -->
+            <div class="info-panel">
+                <div class="info-card">
+                    <h2><i class="fas fa-trophy"></i> Why Choose Us?</h2>
+                    <ul class="features">
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Academic Excellence</h4>
+                                <p>Top-ranked institution with 95% placement rate</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-user-friends"></i>
+                            <div>
+                                <h4>Expert Faculty</h4>
+                                <p>Learn from industry professionals and PhD holders</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-laptop-house"></i>
+                            <div>
+                                <h4>Hybrid Learning</h4>
+                                <p>Flexible online and offline classes available</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <h4>Career Support</h4>
+                                <p>Dedicated placement cell with 500+ partner companies</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>15K+</h3>
+                            <p>Students Enrolled</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>95%</h3>
+                            <p>Placement Rate</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Courses Offered</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>This registration process was seamless and professional. The portal is student-friendly and intuitive.</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="author">
+                            <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=6a11cb&color=fff" alt="Student">
+                            <div>
+                                <h4>Bilal Wazeer</h4>
+                                <p>Computer Science, Class of 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2023 EduRegister Pro. All rights reserved. | Student Registration Portal v2.0</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-question-circle"></i> Help Center</a>
+                <a href="#"><i class="fas fa-phone-alt"></i> Contact Support</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Documentation</a>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content animate__animated animate__zoomIn">
+            <div class="modal-header">
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="success-icon">
+                    <div class="checkmark-circle">
+                        <div class="checkmark"></div>
+                    </div>
+                </div>
+                
+                <h2 class="modal-title">Registration Successful!</h2>
+                
+                <div class="confetti">
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                </div>
+                
+                <p class="modal-message">
+                    <strong>Congratulations!</strong> Your registration has been successfully submitted and your student account has been created.
+                </p>
+                
+                <div class="registration-details">
+                    <h3><i class="fas fa-clipboard-check"></i> Registration Summary</h3>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Student ID:</span>
+                            <span class="detail-value" id="modalStudentId">STU-2023-XXXXX</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Registration Date:</span>
+                            <span class="detail-value" id="modalRegDate"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Email Confirmation:</span>
+                            <span class="detail-value">Sent to <span id="modalEmail"></span></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Next Steps:</span>
+                            <span class="detail-value">Check your email for verification</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download Confirmation
+                    </button>
+                    <button class="btn btn-primary" id="dashboardBtn">
+                        <i class="fas fa-tachometer-alt"></i> Go to Student Dashboard
+                    </button>
+                    <button class="btn btn-outline" id="newRegistrationBtn">
+                        <i class="fas fa-user-plus"></i> Register Another Student
+                    </button>
+                </div>
+                
+                <div class="modal-footer">
+                    <p><i class="fas fa-clock"></i> Your student portal access will be activated within 24 hours.</p>
+                    <p><i class="fas fa-envelope"></i> Need help? Contact <a href="mailto:registrar@eduregister.edu">registrar@eduregister.edu</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content modal-preview animate__animated animate__slideInRight">
+            <div class="modal-header">
+                <h2><i class="fas fa-file-alt"></i> Application Preview</h2>
+                <button class="modal-close" id="previewModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="preview-content" id="previewContent">
+                    <!-- Preview will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="closePreviewBtn">
+                    <i class="fas fa-times"></i> Close Preview
+                </button>
+                <button class="btn btn-primary" id="submitFromPreviewBtn">
+                    <i class="fas fa-check"></i> Submit Application
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
